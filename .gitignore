@@ -1,0 +1,7 @@
+node_modules
+dist
+pnpm-debug.log
+.nuxt
+.output
+playground/.nuxt
+playground/.output
