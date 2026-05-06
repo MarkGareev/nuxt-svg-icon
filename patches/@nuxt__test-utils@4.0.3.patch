@@ -1,0 +1,13 @@
+diff --git a/dist/shared/test-utils.RVsKJA_7.mjs b/dist/shared/test-utils.RVsKJA_7.mjs
+index c20383a7ecb7a7da7e5b4876c4451f7f6315ea06..f611672286c54ae339610a5913c296ef5ba87d45 100644
+--- a/dist/shared/test-utils.RVsKJA_7.mjs
++++ b/dist/shared/test-utils.RVsKJA_7.mjs
+@@ -115,7 +115,7 @@ async function buildFixture() {
+ }
+ 
+ async function setupBun(hooks) {
+-  const bunTest = await import('bun:test');
++  const bunTest = await import(/* @vite-ignore */ 'bun:test');
+   hooks.ctx.mockFn = bunTest.mock;
+   bunTest.beforeAll(hooks.beforeAll, hooks.ctx.options.setupTimeout);
+   bunTest.beforeEach(hooks.beforeEach);

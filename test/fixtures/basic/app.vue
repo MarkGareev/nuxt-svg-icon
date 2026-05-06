@@ -1,0 +1,25 @@
+<template>
+  <div>
+    <Icon
+      id="stroke-icon"
+      name="check"
+    />
+    <Icon
+      id="filled-icon"
+      name="check"
+      filled
+    />
+    <Icon
+      id="fill-only-icon"
+      name="fill-only"
+    />
+    <Icon
+      id="subdir-icon"
+      name="social/github"
+    />
+    <Icon
+      id="missing-icon"
+      name="does-not-exist"
+    />
+  </div>
+</template>
