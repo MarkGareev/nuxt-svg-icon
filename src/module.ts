@@ -32,7 +32,7 @@ export interface ModuleOptions {
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
-    name: 'nuxt-svg-icon',
+    name: 'nuxt-svg-icon-module',
     configKey: 'svgIcon',
     compatibility: {
       nuxt: '>=3.10.0',
@@ -54,7 +54,7 @@ export default defineNuxtModule<ModuleOptions>({
 
     const p = options.prefix
     const css = addTemplate({
-      filename: 'nuxt-svg-icon.css',
+      filename: 'nuxt-svg-icon-module.css',
       write: true,
       getContents: () => `
 .${p} svg { width: 1em; height: 1em; vertical-align: middle; margin-bottom: 0.03em; }

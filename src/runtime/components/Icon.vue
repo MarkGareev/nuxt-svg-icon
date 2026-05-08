@@ -33,7 +33,7 @@ async function loadIcon(name: string) {
 
   if (!loader) {
     console.error(
-      `[nuxt-svg-icon] Icon not found: "${name}" (looked up "${path}")`,
+      `[nuxt-svg-icon-module] Icon not found: "${name}" (looked up "${path}")`,
     )
     return null
   }
@@ -48,7 +48,7 @@ async function loadIcon(name: string) {
 const id = useId()
 
 const { data } = await useAsyncData(
-  `nuxt-svg-icon:${id}:${props.name}`,
+  `nuxt-svg-icon-module:${id}:${props.name}`,
   () => loadIcon(props.name),
   { watch: [() => props.name] },
 )

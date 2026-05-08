@@ -1,10 +1,10 @@
-# nuxt-svg-icon
+# nuxt-svg-icon-module
 
-[![npm version](https://img.shields.io/npm/v/nuxt-svg-icon.svg)](https://npmjs.com/package/nuxt-svg-icon)
-[![npm downloads](https://img.shields.io/npm/dm/nuxt-svg-icon.svg)](https://npmjs.com/package/nuxt-svg-icon)
+[![npm version](https://img.shields.io/npm/v/nuxt-svg-icon-module.svg)](https://npmjs.com/package/nuxt-svg-icon-module)
+[![npm downloads](https://img.shields.io/npm/dm/nuxt-svg-icon-module.svg)](https://npmjs.com/package/nuxt-svg-icon-module)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Nuxt](https://img.shields.io/badge/Nuxt-3.10%2B%20%7C%204.x-00DC82.svg)](https://nuxt.com)
-[![CI](https://github.com/markgareev/nuxt-svg-icon/actions/workflows/ci.yml/badge.svg)](https://github.com/markgareev/nuxt-svg-icon/actions/workflows/ci.yml)
+[![CI](https://github.com/markgareev/nuxt-svg-icon-module/actions/workflows/ci.yml/badge.svg)](https://github.com/markgareev/nuxt-svg-icon-module/actions/workflows/ci.yml)
 
 Nuxt module for lazily loading inline SVG icons straight from your `assets/` directory. Icons inherit `currentColor` automatically so they fit naturally into any design system.
 
@@ -20,7 +20,7 @@ Nuxt module for lazily loading inline SVG icons straight from your `assets/` dir
 
 ## Compatibility
 
-| nuxt-svg-icon | Nuxt  | Node.js |
+| nuxt-svg-icon-module | Nuxt  | Node.js |
 |---------------|-------|---------|
 | `^1.0.0`      | `^3.10 \|\| ^4.0` | `>=18`  |
 
@@ -28,19 +28,19 @@ Nuxt module for lazily loading inline SVG icons straight from your `assets/` dir
 
 ```bash
 # pnpm
-pnpm add nuxt-svg-icon
+pnpm add nuxt-svg-icon-module
 
 # npm
-npm install nuxt-svg-icon
+npm install nuxt-svg-icon-module
 
 # yarn
-yarn add nuxt-svg-icon
+yarn add nuxt-svg-icon-module
 ```
 
 ```ts
 // nuxt.config.ts
 export default defineNuxtConfig({
-  modules: ['nuxt-svg-icon'],
+  modules: ['nuxt-svg-icon-module'],
 })
 ```
 
@@ -89,7 +89,7 @@ Icons scale with `font-size` and inherit `color` from their parent:
 ```ts
 // nuxt.config.ts
 export default defineNuxtConfig({
-  modules: ['nuxt-svg-icon'],
+  modules: ['nuxt-svg-icon-module'],
 
   svgIcon: {
     // Directory containing SVG files, relative to project root
@@ -126,8 +126,8 @@ Only icons that are actually rendered get bundled — unused SVGs are tree-shake
 
 ```bash
 # clone and install
-git clone https://github.com/markgareev/nuxt-svg-icon.git
-cd nuxt-svg-icon
+git clone https://github.com/markgareev/nuxt-svg-icon-module.git
+cd nuxt-svg-icon-module
 pnpm install
 
 # prepare stubs and start playground

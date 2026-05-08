@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <h1>nuxt-svg-icon playground</h1>
+    <h1>nuxt-svg-icon-module playground</h1>
 
     <section class="section">
       <h2 class="section__title">
