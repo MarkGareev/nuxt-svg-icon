@@ -22,7 +22,7 @@ const {
   public: { svgIcon: config },
 } = useRuntimeConfig()
 
-const iconsImport = import.meta.glob<string>('/assets/icons/**/**.svg', {
+const iconsImport = import.meta.glob<string>(['/**/*.svg', '!**/node_modules/**'], {
   query: '?raw',
   import: 'default',
 })
