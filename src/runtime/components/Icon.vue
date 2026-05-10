@@ -11,6 +11,8 @@
 </template>
 
 <script setup lang="ts">
+import { useRuntimeConfig, useAsyncData, useId } from '#app'
+
 const props = defineProps<{
   /** Icon path relative to iconsDir, without .svg extension. Supports subdirectories: 'social/github' */
   name: string
