@@ -4,7 +4,6 @@
 [![npm downloads](https://img.shields.io/npm/dm/nuxt-svg-icon-module.svg)](https://npmjs.com/package/nuxt-svg-icon-module)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Nuxt](https://img.shields.io/badge/Nuxt-3.10%2B%20%7C%204.x-00DC82.svg)](https://nuxt.com)
-[![CI](https://github.com/markgareev/nuxt-svg-icon-module/actions/workflows/ci.yml/badge.svg)](https://github.com/markgareev/nuxt-svg-icon-module/actions/workflows/ci.yml)
 
 Nuxt module for lazily loading inline SVG icons straight from your `assets/` directory. Icons inherit `currentColor` automatically so they fit naturally into any design system.
 
