@@ -1,4 +1,5 @@
-import { defineNuxtModule, addComponent, createResolver, addTemplate } from '@nuxt/kit'
+import { defineNuxtModule, addComponent, createResolver, addTemplate, addVitePlugin } from '@nuxt/kit'
+import type { Config as SvgoConfig } from 'svgo'
 
 declare module 'nuxt/schema' {
   interface PublicRuntimeConfig {
@@ -28,6 +29,18 @@ export interface ModuleOptions {
    * @default 'icon'
    */
   prefix: string
+
+  /**
+   * Enable automatic SVG optimization via SVGO.
+   * @default true
+   */
+  optimize: boolean
+
+  /**
+   * Custom SVGO configuration. Only used when `optimize` is true.
+   * @default {}
+   */
+  svgoConfig: SvgoConfig
 }
 
 export default defineNuxtModule<ModuleOptions>({
@@ -42,11 +55,12 @@ export default defineNuxtModule<ModuleOptions>({
     iconsDir: 'assets/icons',
     componentName: 'Icon',
     prefix: 'icon',
+    optimize: true,
+    svgoConfig: {},
   },
   setup(options, nuxt) {
     const { resolve } = createResolver(import.meta.url)
 
-    // Pass module options to the runtime component via runtimeConfig
     nuxt.options.runtimeConfig.public.svgIcon = {
       iconsDir: options.iconsDir,
       prefix: options.prefix,
@@ -68,5 +82,27 @@ export default defineNuxtModule<ModuleOptions>({
       name: options.componentName,
       filePath: resolve('./runtime/components/Icon.vue'),
     })
+
+    if (options.optimize) {
+      addVitePlugin(svgOptimizePlugin(options.svgoConfig))
+    }
   },
 })
+
+function svgOptimizePlugin(svgoConfig: SvgoConfig) {
+  return {
+    name: 'nuxt-svg-icon:optimize',
+    enforce: 'pre' as const,
+    async load(filePath: string) {
+      const [path, query] = filePath.split('?')
+      if (!path.endsWith('.svg') || query !== 'raw') return
+
+      const { readFile } = await import('node:fs/promises')
+      const { optimize } = await import('svgo')
+
+      const raw = await readFile(path, 'utf8')
+      const result = optimize(raw, svgoConfig)
+      return `export default ${JSON.stringify(result.data)}`
+    },
+  }
+}

@@ -16,6 +16,7 @@ Nuxt module for lazily loading inline SVG icons straight from your `assets/` dir
 - **Reactive** — changing the `name` prop swaps the icon without a page reload
 - **SSR-safe** — uses `useAsyncData` with a unique key per instance, no hydration mismatches
 - **Configurable** — custom icons directory, component name, and CSS prefix
+- **Automatic optimization** — SVGs are optimized via SVGO at build time (configurable or opt-out)
 
 ## Compatibility
 
@@ -99,6 +100,12 @@ export default defineNuxtConfig({
 
     // CSS class prefix applied to the wrapper <span>
     prefix: 'icon', // default
+
+    // Automatically optimize SVGs via SVGO at build time
+    optimize: true, // default
+
+    // Custom SVGO configuration (see https://svgo.dev/docs/configuration/)
+    svgoConfig: {}, // default
   },
 })
 ```
