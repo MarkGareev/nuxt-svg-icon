@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.2.1
+
+[compare changes](https://github.com/markgareev/nuxt-svg-icon/compare/v1.2.0...v1.2.1)
+
+### 🩹 Fixes
+
+- Strip srcDir prefix from iconsDir so Vite glob keys match in projects with an `app/` directory ([3f4e187](https://github.com/markgareev/nuxt-svg-icon/commit/3f4e187))
+
+### ❤️ Contributors
+
+- Mark Gareev <gareevmark02@gmail.com>
+
 ## v1.2.0
 
 [compare changes](https://github.com/markgareev/nuxt-svg-icon/compare/v1.1.0...v1.2.0)
