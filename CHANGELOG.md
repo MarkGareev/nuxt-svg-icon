@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v1.2.0
+
+[compare changes](https://github.com/markgareev/nuxt-svg-icon/compare/v1.1.0...v1.2.0)
+
+### 🚀 Enhancements
+
+- Add TypeScript autocomplete for icon names ([2619477](https://github.com/markgareev/nuxt-svg-icon/commit/2619477))
+
+### ✅ Tests
+
+- Add tests for TypeScript autocomplete feature ([24c2cf1](https://github.com/markgareev/nuxt-svg-icon/commit/24c2cf1))
+
+### ❤️ Contributors
+
+- Mark Gareev <gareevmark02@gmail.com>
+
 ## v1.1.0
 
 [compare changes](https://github.com/markgareev/nuxt-svg-icon/compare/v1.0.1...v1.1.0)
