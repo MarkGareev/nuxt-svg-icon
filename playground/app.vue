@@ -60,7 +60,7 @@
 </template>
 
 <script setup lang="ts">
-const icons = ['check', 'close', 'arrow-right']
+const icons = ['check', 'close', 'arrow-right'] as const
 const index = ref(0)
 const current = computed(() => icons[index.value]!)
 function toggle() {
