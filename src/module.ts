@@ -65,8 +65,15 @@ export default defineNuxtModule<ModuleOptions>({
   async setup(options, nuxt) {
     const { resolve } = createResolver(import.meta.url)
 
+    // iconsDir is relative to rootDir, but Vite glob keys are relative to srcDir.
+    // Strip the srcDir prefix so the runtime path matches glob keys at all times.
+    const srcDirRel = relative(nuxt.options.rootDir, nuxt.options.srcDir)
+    const iconsDirForGlob = srcDirRel
+      ? options.iconsDir.replace(new RegExp(`^${srcDirRel}/`), '')
+      : options.iconsDir
+
     nuxt.options.runtimeConfig.public.svgIcon = {
-      iconsDir: options.iconsDir,
+      iconsDir: iconsDirForGlob,
       prefix: options.prefix,
     }
 
