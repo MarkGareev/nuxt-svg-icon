@@ -1,6 +1,26 @@
 # Changelog
 
 
+## v1.3.0
+
+[compare changes](https://github.com/markgareev/nuxt-svg-icon/compare/v1.2.1...v1.3.0)
+
+### 🚀 Enhancements
+
+- Add virtual module for importing IconName type ([9c7c792](https://github.com/markgareev/nuxt-svg-icon/commit/9c7c792))
+
+### 📖 Documentation
+
+- Add XSS security note for v-html usage ([861536b](https://github.com/markgareev/nuxt-svg-icon/commit/861536b))
+
+### ✅ Tests
+
+- Add test for nuxt-svg-icon-module virtual module declaration ([2073f06](https://github.com/markgareev/nuxt-svg-icon/commit/2073f06))
+
+### ❤️ Contributors
+
+- Mark Gareev <gareevmark02@gmail.com>
+
 ## v1.2.1
 
 [compare changes](https://github.com/markgareev/nuxt-svg-icon/compare/v1.2.0...v1.2.1)
