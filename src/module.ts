@@ -113,9 +113,16 @@ export default defineNuxtModule<ModuleOptions>({
           `    Lazy${componentName}: import('vue').DefineComponent<{ name: IconName; filled?: boolean }, {}, {}>`,
           `  }`,
           `}`,
+          `declare module 'nuxt-svg-icon-module' {`,
+          `  export type { IconName }`,
+          `}`,
         ].join('\n') + '\n'
       },
     })
+
+    nuxt.options.alias['nuxt-svg-icon-module'] = iconTypeTemplate.dst
+
+    addVitePlugin(virtualIconModule())
 
     addComponent({
       name: options.componentName,
@@ -133,6 +140,20 @@ export default defineNuxtModule<ModuleOptions>({
     }
   },
 })
+
+function virtualIconModule() {
+  const VIRTUAL_ID = 'nuxt-svg-icon-module'
+  const RESOLVED_ID = '\0' + VIRTUAL_ID
+  return {
+    name: 'nuxt-svg-icon:virtual-module',
+    resolveId(id: string) {
+      if (id === VIRTUAL_ID) return RESOLVED_ID
+    },
+    load(id: string) {
+      if (id === RESOLVED_ID) return `export {}`
+    },
+  }
+}
 
 function svgOptimizePlugin(svgoConfig: SvgoConfig) {
   return {
