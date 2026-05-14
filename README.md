@@ -128,6 +128,8 @@ The component uses Vite's `import.meta.glob` with the `?raw` query to import SVG
 
 Only icons that are actually rendered get bundled — unused SVGs are tree-shaken automatically.
 
+> **Security note:** SVG content is injected via `v-html`. Never pass untrusted or user-supplied SVG strings through this component — only serve icons from your own `iconsDir`. Injecting arbitrary SVG can lead to XSS attacks.
+
 ## Contributing
 
 ```bash
