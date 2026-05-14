@@ -55,4 +55,10 @@ describe('TypeScript autocomplete — basic fixture', async () => {
       .map(s => s.trim().replace(/^"|"$/g, ''))
     expect(names).toEqual([...names].sort())
   })
+
+  it('declares module augmentation for nuxt-svg-icon-module', async () => {
+    const content = await readFile(getTypesPath(), 'utf-8')
+    expect(content).toContain(`declare module 'nuxt-svg-icon-module'`)
+    expect(content).toContain('export type { IconName }')
+  })
 })
