@@ -1,6 +1,6 @@
 {
   "name": "nuxt-svg-icon-module",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "Nuxt module for lazy-loading inline SVG icons from your assets directory",
   "repository": "https://github.com/markgareev/nuxt-svg-icon",
   "license": "MIT",

@@ -1,6 +1,27 @@
 # Changelog
 
 
+## v1.4.0
+
+[compare changes](https://github.com/markgareev/nuxt-svg-icon/compare/v1.3.0...v1.4.0)
+
+### 🚀 Enhancements
+
+- Add label prop for a11y (aria-label, role=img, aria-hidden) ([76a651d](https://github.com/markgareev/nuxt-svg-icon/commit/76a651d))
+
+### 📖 Documentation
+
+- Document exported IconName type ([fc17369](https://github.com/markgareev/nuxt-svg-icon/commit/fc17369))
+- Add Accessibility section for label prop ([7f92962](https://github.com/markgareev/nuxt-svg-icon/commit/7f92962))
+
+### ✅ Tests
+
+- Add tests for label prop a11y behavior ([0df6625](https://github.com/markgareev/nuxt-svg-icon/commit/0df6625))
+
+### ❤️ Contributors
+
+- Mark Gareev <gareevmark02@gmail.com>
+
 ## v1.3.0
 
 [compare changes](https://github.com/markgareev/nuxt-svg-icon/compare/v1.2.1...v1.3.0)
