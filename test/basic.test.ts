@@ -55,6 +55,30 @@ describe('nuxt-svg-icon-module', async () => {
     })
   })
 
+  describe('accessibility', () => {
+    it('adds aria-label and role=img when label prop is set', async () => {
+      const html = await $fetch<string>('/')
+      const match = html.match(/<span[^>]*id="labeled-icon"[^>]*>/)
+      expect(match).not.toBeNull()
+      expect(match![0]).toContain('aria-label="Confirmed"')
+      expect(match![0]).toContain('role="img"')
+    })
+
+    it('adds aria-hidden=true when label prop is omitted', async () => {
+      const html = await $fetch<string>('/')
+      const match = html.match(/<span[^>]*id="unlabeled-icon"[^>]*>/)
+      expect(match).not.toBeNull()
+      expect(match![0]).toContain('aria-hidden="true"')
+    })
+
+    it('does not add aria-hidden when label prop is set', async () => {
+      const html = await $fetch<string>('/')
+      const match = html.match(/<span[^>]*id="labeled-icon"[^>]*>/)
+      expect(match).not.toBeNull()
+      expect(match![0]).not.toContain('aria-hidden')
+    })
+  })
+
   describe('subdirectory support', () => {
     it('loads icon from nested subdirectory', async () => {
       const html = await $fetch<string>('/')

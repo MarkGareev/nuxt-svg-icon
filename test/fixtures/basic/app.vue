@@ -21,5 +21,14 @@
       id="missing-icon"
       name="does-not-exist"
     />
+    <Icon
+      id="labeled-icon"
+      name="check"
+      label="Confirmed"
+    />
+    <Icon
+      id="unlabeled-icon"
+      name="check"
+    />
   </div>
 </template>
