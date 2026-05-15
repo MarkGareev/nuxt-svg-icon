@@ -116,6 +116,7 @@ export default defineNuxtConfig({
 |----------|-----------|---------|----------------------------------------------------------------|
 | `name`   | `string`  | —       | Icon path relative to `iconsDir`, without `.svg` extension     |
 | `filled` | `boolean` | `false` | When `true`, preserves the SVG's original fill and stroke colors |
+| `label`  | `string`  | —       | Accessible label announced by screen readers. When omitted, the icon is hidden from assistive technologies (`aria-hidden="true"`) |
 
 ## TypeScript: `IconName` type
 

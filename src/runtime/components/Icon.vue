@@ -6,6 +6,9 @@
       !filled && `${config.prefix}_fill`,
       data.hasStroke && !filled && `${config.prefix}_stroke`,
     ]"
+    :aria-label="label"
+    :aria-hidden="label ? undefined : 'true'"
+    :role="label ? 'img' : undefined"
     v-html="data.svg"
   />
 </template>
@@ -18,6 +21,8 @@ const props = defineProps<{
   name: string
   /** When true, keeps the SVG's original fill/stroke colors instead of inheriting currentColor */
   filled?: boolean
+  /** Accessible label for the icon. When provided, the icon is announced by screen readers. When omitted, the icon is hidden from assistive technologies (aria-hidden). */
+  label?: string
 }>()
 
 const {
