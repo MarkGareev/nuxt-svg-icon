@@ -118,6 +118,18 @@ export default defineNuxtConfig({
 | `filled` | `boolean` | `false` | When `true`, preserves the SVG's original fill and stroke colors |
 | `label`  | `string`  | —       | Accessible label announced by screen readers. When omitted, the icon is hidden from assistive technologies (`aria-hidden="true"`) |
 
+## Accessibility
+
+By default, icons are decorative and hidden from screen readers via `aria-hidden="true"`. When an icon carries meaning, pass the `label` prop — the icon will be announced by assistive technologies:
+
+```vue
+<!-- decorative — screen readers skip this -->
+<Icon name="check" />
+
+<!-- meaningful — screen readers announce "Close dialog" -->
+<Icon name="close" label="Close dialog" />
+```
+
 ## TypeScript: `IconName` type
 
 The module generates an `IconName` type — a string union of every icon name derived from your `iconsDir` at build time. It is automatically available in `vue` component props via the global components augmentation, and can also be imported explicitly:
