@@ -117,6 +117,20 @@ export default defineNuxtConfig({
 | `name`   | `string`  | —       | Icon path relative to `iconsDir`, without `.svg` extension     |
 | `filled` | `boolean` | `false` | When `true`, preserves the SVG's original fill and stroke colors |
 
+## TypeScript: `IconName` type
+
+The module generates an `IconName` type — a string union of every icon name derived from your `iconsDir` at build time. It is automatically available in `vue` component props via the global components augmentation, and can also be imported explicitly:
+
+```ts
+import type { IconName } from 'nuxt-svg-icon-module'
+
+const icon = ref<IconName>('check')
+```
+
+This gives you autocomplete and type-safety wherever you pass an icon name — in scripts, composables, or typed component props.
+
+If no SVG files are found in `iconsDir`, `IconName` falls back to `string`.
+
 ## How it works
 
 The component uses Vite's `import.meta.glob` with the `?raw` query to import SVG files as plain strings at build time. At runtime:
