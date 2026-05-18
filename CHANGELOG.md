@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.5.1
+
+[compare changes](https://github.com/markgareev/nuxt-svg-icon/compare/v1.5.0...v1.5.1)
+
+### 📖 Documentation
+
+- Fix font-size example, icons no longer scale with parent font-size ([6cca8cc](https://github.com/markgareev/nuxt-svg-icon/commit/6cca8cc))
+
+### ❤️ Contributors
+
+- Mark Gareev <gareevmark02@gmail.com>
+
 ## v1.5.0
 
 [compare changes](https://github.com/markgareev/nuxt-svg-icon/compare/v1.4.0...v1.5.0)
