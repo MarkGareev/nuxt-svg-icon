@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.5.0
+
+[compare changes](https://github.com/markgareev/nuxt-svg-icon/compare/v1.4.0...v1.5.0)
+
+### 🚀 Enhancements
+
+- Size icons via container width/height instead of CSS variables ([83dc926](https://github.com/markgareev/nuxt-svg-icon/commit/83dc926))
+
+### ❤️ Contributors
+
+- Mark Gareev <gareevmark02@gmail.com>
+
 ## v1.4.0
 
 [compare changes](https://github.com/markgareev/nuxt-svg-icon/compare/v1.3.0...v1.4.0)
