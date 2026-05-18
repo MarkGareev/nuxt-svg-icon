@@ -82,7 +82,8 @@ export default defineNuxtModule<ModuleOptions>({
       filename: 'nuxt-svg-icon-module.css',
       write: true,
       getContents: () => `
-.${p} svg { width: 1em; height: 1em; vertical-align: middle; margin-bottom: 0.03em; }
+.${p} { display: inline-flex; width: 1em; height: 1em; }
+.${p} svg { width: 100%; height: 100%; vertical-align: middle; }
 .${p}_fill, .${p}_fill * { fill: currentColor; }
 .${p}_stroke, .${p}_stroke * { stroke: currentColor; }
 `.trimStart(),

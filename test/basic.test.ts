@@ -79,6 +79,28 @@ describe('nuxt-svg-icon-module', async () => {
     })
   })
 
+  describe('generated css', () => {
+    async function fetchCss(html: string): Promise<string> {
+      const cssHref = html.match(/<link rel="stylesheet" href="([^"]+)"/)?.[1]
+      expect(cssHref).toBeTruthy()
+      return $fetch<string>(cssHref!)
+    }
+
+    it('makes the wrapper a flex container so width/height props take effect', async () => {
+      const html = await $fetch<string>('/')
+      const css = await fetchCss(html)
+      expect(css).toMatch(/display:\s*inline-flex/)
+    })
+
+    it('makes svg fill the wrapper so size is controlled from outside', async () => {
+      const html = await $fetch<string>('/')
+      const css = await fetchCss(html)
+      expect(css).toContain('.icon svg')
+      expect(css).toMatch(/width:\s*100%/)
+      expect(css).toMatch(/height:\s*100%/)
+    })
+  })
+
   describe('subdirectory support', () => {
     it('loads icon from nested subdirectory', async () => {
       const html = await $fetch<string>('/')

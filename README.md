@@ -84,6 +84,21 @@ Icons scale with `font-size` and inherit `color` from their parent:
 </p>
 ```
 
+By default icons are `1em × 1em`. To set a fixed size, apply `width` and `height` directly on the component or wrap it in a container:
+
+```vue
+<!-- square icon -->
+<Icon name="check" style="width: 24px; height: 24px" />
+
+<!-- non-square icon -->
+<Icon name="logo" style="width: 124px; height: 40px" />
+
+<!-- via a wrapper -->
+<div style="width: 124px; height: 40px">
+  <Icon name="logo" />
+</div>
+```
+
 ## Configuration
 
 ```ts
