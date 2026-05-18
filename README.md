@@ -76,10 +76,10 @@ Use the component anywhere:
 <Icon :name="currentIcon" />
 ```
 
-Icons scale with `font-size` and inherit `color` from their parent:
+Icons inherit `color` from their parent:
 
 ```vue
-<p style="font-size: 1.5rem; color: tomato;">
+<p style="color: tomato;">
   <Icon name="check" /> Done
 </p>
 ```
